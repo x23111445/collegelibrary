@@ -1,0 +1,53 @@
+{% extends "Books/base_generic.html" %}
+
+{% block content %}
+<style>
+  /* Add CSS styles for centering the content and aligning the books vertically */
+  .center-content {
+    text-align: center;
+    margin-top: 50px; /* You can adjust the margin-top value based on your design preference */
+  }
+
+  /* Center the ul element and add margin-bottom for space after the list */
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 20px; /* Adjust the margin-bottom value based on your desired space */
+  }
+
+  /* Display the li elements as block elements for vertical alignment */
+  li {
+    display: block;
+    margin-bottom: 10px; /* Adjust the margin-bottom as needed */
+  }
+
+  /* Apply bold formatting to the book titles */
+  li a {
+    font-weight: bold;
+  }
+
+  /* Add margin to the heading for space between heading and books */
+  h1 {
+    margin-bottom: 15px; /* Adjust the margin-bottom value based on your desired space */
+    font-size: 28px; /* Adjust the font-size value based on your desired size */
+  }
+
+  /* Increase the font size for the text "Newest Books" */
+  .newest-books {
+    font-size: 40px; /* Adjust the font-size value based on your desired size */
+  }
+</style>
+
+<div class="center-content">
+  <h1 class="newest-books">Newest Books</h1>
+  {% if newest_Books %}
+    <ul>
+      {% for book in newest_Books %}
+        <li><a href="{% url 'Books:show' book.id %}">{{ book.title }}</a></li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>There are no books recorded.</p>
+  {% endif %}
+</div>
+{% endblock content %}

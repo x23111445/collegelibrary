@@ -1,0 +1,21 @@
+{% extends "Books/base_generic.html" %}
+
+{% block content %}
+<div style="text-align: center; margin-top: 40px;">
+    <!-- Add an empty div for spacing -->
+    <div></div>
+    
+    <form method="POST" style="display: inline-block;">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div>
+            <button type="submit" style="background-color: green; color: white;">Sign In</button>
+        </div>
+        <p></p>
+        <div>
+            If you don't have an account yet
+            <a href="{% url 'users:sign_up' %}">Sign Up</a>
+        </div>
+    </form>
+</div>
+{% endblock content %}

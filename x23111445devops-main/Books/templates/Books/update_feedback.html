@@ -1,0 +1,19 @@
+{% extends "Books/base_generic.html" %}
+
+{% block content %}
+<style>
+  /* ... (your existing styles) ... */
+</style>
+
+<h2>Update Feedback for {{ book.title }}</h2>
+
+<form method="post" action="">
+  {% csrf_token %}
+  {{ form.as_p }}
+
+  <button type="submit">Update Feedback</button>
+</form>
+
+<a href="{% url 'Books:save_feedback' book.id %}">Back to Feedback</a>
+
+{% endblock content %}

@@ -1,0 +1,57 @@
+{% extends "Books/base_generic.html" %}
+
+{% block content %}
+<style>
+  table {
+    margin: auto;
+    text-align: left; /* Adjust text alignment within the table if needed */
+  }
+  h2, table {
+    text-align: center;
+  }
+  h2 {
+    color: purple; /* Set the color of the title to purple */
+    font-size: 40px; /* Increase the font size of the title */
+  }
+  tbody tr {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* Adjust alignment within the row if needed */
+  }
+  td {
+    padding: 5px; /* Reduce padding for less spacing within each field */
+    margin-bottom: 5px; /* Reduce margin between the fields */
+  }
+</style>
+
+<h2>{{book.title}}</h2>
+<table>
+  <thead>
+  </thead>
+  <tbody>
+    <tr>
+      <td><b>Author:</b></td>
+      <td>{{book.author}}</td>
+    </tr>
+    <tr>
+      <td><b>Publication date:</b></td>
+      <td>{{book.publication_date}}</td>
+    </tr>
+    <tr>
+      <td><b>Genre:</b></td>
+      <td>{{book.genre}}</td>
+    </tr>
+    <tr>
+      <td><b>Pages:</b></td>
+      <td>{{book.pages}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Add feedback button -->
+<form method="post" action="{% url 'Books:save_feedback' book.id %}">
+  {% csrf_token %}
+  <button type="submit">Provide Feedback</button>
+</form>
+
+{% endblock content %}

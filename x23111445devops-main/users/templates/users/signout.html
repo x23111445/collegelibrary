@@ -1,0 +1,26 @@
+{% extends "Books/base_generic.html" %}
+
+{% block content %}
+<style>
+    .center {
+        text-align: center;
+        margin-top: 50px; /* Adjust the margin as needed */
+        font-size: 25px; /* Adjust the font size as needed */
+    }
+
+    .button-box {
+        display: inline-block;
+        padding: 10px 20px;
+        border: 2px solid #000; /* Set border color as needed */
+        text-decoration: none;
+        color: #000; /* Set text color as needed */
+    }
+</style>
+
+<div class="center">
+    <div style="font-size: 30px;">You have been signed out.</div>
+    <div class="button-box">
+        <a href="{% url 'sign_in' %}" style="font-size: 25px;">Sign In</a>
+    </div>
+</div>
+{% endblock content %}

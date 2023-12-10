@@ -1,0 +1,14 @@
+{% extends "Books/base_generic.html" %}
+
+{% block content %}
+  <div style="text-align: center;">
+    <h1 style="background-color: #800080; color: white; padding: 10px;">College Library</h1>
+    <div style="border: 1px solid #ccc; padding: 20px; max-width: 300px; margin: 0 auto;">
+      <p>You need to sign in to view the books.</p>
+      <div style="display: flex; justify-content: space-between;">
+        <a href="{% url 'users:sign_up' %}" style="text-decoration: none; padding: 10px; background-color: #4CAF50; color: white; border-radius: 5px;">Sign up</a>
+        <a href="{% url 'sign_in' %}" style="text-decoration: none; padding: 10px; background-color: #337ab7; color: white; border-radius: 5px;">Sign in</a>
+      </div>
+    </div>
+  </div>
+{% endblock content %}
