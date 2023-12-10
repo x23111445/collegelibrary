@@ -1,7 +1,6 @@
 asgiref==3.7.2
 astroid==2.15.5
 awsebcli==3.20.10
-backports.zoneinfo==0.2.1
 blessed==1.20.0
 botocore==1.31.85
 cement==2.8.2
@@ -12,7 +11,6 @@ dill==0.3.7
 Django==4.2.8
 git-remote-codecommit==1.17
 idna==3.6
-ikp3db==1.4.2
 isort==5.12.0
 jedi==0.19.0
 jmespath==1.0.1
