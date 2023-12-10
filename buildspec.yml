@@ -30,6 +30,8 @@ phases:
 artifacts:
   files:
     - '*/'
+# Specify the service role ARN
+service-role: arn:aws:iam::250738637992:role/service-role/AWSCodePipelineServiceRole-ap-southeast-2-x23111445bookss    
 eb_codebuild_settings:
   aws_beanstalk_application:
     name: "x23111445-bookss"
