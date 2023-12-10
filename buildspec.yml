@@ -19,7 +19,8 @@ phases:
     commands:
       #- pylint $CODEBUILD_SRC_DIR/*.py
       #- pylint $CODEBUILD_SRC_DIR//.py
-      - sonar-scanner -Xmx1024m -Dsonar.organization=x23111445 -Dsonar.projectKey=x23111445_collegelibrary -Dsonar.sources=. -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=e885a0e2e8c2dcb4ce491231ab27803bf8ba1700
+      - export SONAR_SCANNER_OPTS="-Xmx1024m"
+      - sonar-scanner -Dsonar.organization=x23111445 -Dsonar.projectKey=x23111445_collegelibrary -Dsonar.sources=. -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=e885a0e2e8c2dcb4ce491231ab27803bf8ba1700
       - sleep 5
       - curl https://sonarcloud.io/api/qualitygates/project_status?projectKey=x23111445_collegelibrary > analysis.json
       - cat analysis.json
