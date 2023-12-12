@@ -1,4 +1,9 @@
 #!/usr/bin/env python
+"""
+Django management script.
+
+This script is used to run various administrative tasks for the Django project.
+"""
 import os
 import sys
 
