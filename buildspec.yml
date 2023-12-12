@@ -17,8 +17,8 @@ phases:
       - python --version
   pre_build:
     commands:
-      #- pylint $CODEBUILD_SRC_DIR/*.py
-      #- pylint $CODEBUILD_SRC_DIR//.py
+      - pylint $CODEBUILD_SRC_DIR/*.py  
+      - pylint --disable=C0303,C0304,C0305,C0114,C0115,R0903,R0901,E1101,E0602,W0611,W0611,W0621,W0707 $CODEBUILD_SRC_DIR/*.py
       - export SONAR_SCANNER_OPTS="-Xmx1024m"
       - sonar-scanner -Dsonar.organization=x23111445 -Dsonar.projectKey=x23111445_collegelibrary -Dsonar.sources=. -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=e885a0e2e8c2dcb4ce491231ab27803bf8ba1700
       - sleep 5
